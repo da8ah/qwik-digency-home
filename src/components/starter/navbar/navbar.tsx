@@ -1,10 +1,12 @@
 import { component$, useContext } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { ThemeContext } from "~/routes/layout";
 import {
 	HeroiconsSquares2x220Solid as HiSquare,
 	HeroiconsSquaresPlus20Solid as HiSquarePlus,
-} from "../icons/qwik";
-import { ThemeContext } from "~/routes/layout";
+	MdiLightningBoltCircle as MdiDark,
+	MdiLightningBolt as MdiLight,
+} from "../icons/icons";
 
 interface ChildProps {
 	mobileMenuState: { isMenuOpen: boolean };
@@ -18,9 +20,10 @@ export default component$<ChildProps>(
 		return (
 			<nav
 				class={`${
-					// mobileMenuState.isMenuOpen ? "h-screen bg-black" : "h-auto"
-					""
-				} h-screen bg-white dark:bg-black fixed w-full p-4`}
+					mobileMenuState.isMenuOpen
+						? "h-screen bg-[--body-bg]"
+						: "h-auto bg-transparent"
+				} fixed w-full p-4`}
 			>
 				<div class="flex flex-row justify-between items-end md:w-[10%] text-5xl">
 					<a href="/" title="logo">
@@ -44,41 +47,52 @@ export default component$<ChildProps>(
 						/>
 					)}
 				</div>
-				<div class={"flex flex-col-reverse"}>
+				<div
+					class={`${
+						mobileMenuState.isMenuOpen ? "visible" : "invisible"
+					} h-full flex flex-col justify-around`}
+				>
 					<ul class={"p-5 w-full text-center"}>
 						<li>
-							<Link class={"block text-2xl md:text-lg"} href="#hero">
+							<Link class={"block py-2 text-3xl md:text-lg"} href="#hero">
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link class={"block text-2xl md:text-lg"} href="#about">
+							<Link class={"block py-2 text-3xl md:text-lg"} href="#about">
 								About
 							</Link>
 						</li>
 						<li>
-							<Link class={"block text-2xl md:text-lg"} href="#service">
+							<Link class={"block py-2 text-3xl md:text-lg"} href="#service">
 								Service
 							</Link>
 						</li>
 						<li>
-							<Link class={"block text-2xl md:text-lg"} href="#projects">
+							<Link class={"block py-2 text-3xl md:text-lg"} href="#projects">
 								Projects
 							</Link>
 						</li>
 						<li>
-							<Link class={"block text-2xl md:text-lg"} href="#blog">
+							<Link class={"block py-2 text-3xl md:text-lg"} href="#blog">
 								Blog
 							</Link>
 						</li>
 					</ul>
-					<div class={"self-end"}>
+					<div class={"w-full flex justify-center"}>
 						<button
-							class={"uppercase"}
+							class={
+								"rounded-full px-2 w-1/5 flex flex-row items-center capitalize text-xl ring-1 ring-black ring-offset-black dark:ring-white dark:ring-offset-white"
+							}
 							onClick$={() =>
 								(theme.value = theme.value === "dark" ? "light" : "dark")
 							}
 						>
+							{theme.value === "dark" ? (
+								<MdiDark class="cursor-pointer" />
+							) : (
+								<MdiLight class="cursor-pointer" />
+							)}{" "}
 							{theme.value}
 						</button>
 					</div>
