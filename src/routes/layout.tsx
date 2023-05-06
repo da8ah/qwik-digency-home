@@ -18,12 +18,8 @@ export default component$(() => {
 	useStyles$(styles);
 	return (
 		<>
-			<Header menuState={mobileNavbarOverflow} />
-			<main
-				class={
-					mobileNavbarOverflow.isMenuOpen ? "overflow-hidden" : "overflow-auto"
-				}
-			>
+			<Header mobileMenuState={mobileNavbarOverflow} />
+			<main>
 				<Slot />
 			</main>
 			<Footer />

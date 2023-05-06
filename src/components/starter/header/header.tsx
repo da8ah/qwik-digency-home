@@ -1,15 +1,16 @@
 import { component$ } from "@builder.io/qwik";
 import Navbar from "../navbar/navbar";
-import styles from "./header.module.css";
 
 interface ChildProps {
-	menuState: { isMenuOpen: boolean };
+	mobileMenuState: { isMenuOpen: boolean };
 }
 
-export default component$<ChildProps>(({ menuState }) => {
-	return (
-		<header class={styles.header}>
-			<Navbar menuState={menuState} />
-		</header>
-	);
-});
+export default component$<ChildProps>(
+	({ mobileMenuState: mobileMenuState }) => {
+		return (
+			<header class={"h-[20vh]"}>
+				<Navbar mobileMenuState={mobileMenuState} />
+			</header>
+		);
+	},
+);
