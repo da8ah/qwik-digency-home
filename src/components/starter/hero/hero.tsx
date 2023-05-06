@@ -3,7 +3,10 @@ import styles from "./hero.module.css";
 
 export default component$(() => {
 	return (
-		<section id="hero" class={["container", styles.wrapper]}>
+		<section
+			id="hero"
+			class={["container", styles.wrapper, "dark:bg-black dark:text-white"]}
+		>
 			<div style={{ width: "50%" }}>
 				<h1>
 					We're Creating Perfect Digital Products To
