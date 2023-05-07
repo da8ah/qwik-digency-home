@@ -21,11 +21,11 @@ export default component$<ChildProps>(
 			<nav
 				class={`${
 					mobileMenuState.isMenuOpen
-						? "h-screen bg-[--body-bg]"
+						? "h-screen bg-[--body-bg-light] dark:bg-[--btn-secondary-bg]"
 						: "h-auto bg-transparent"
-				} fixed w-full p-4`}
+				} fixed md:relative md:h-auto w-full top-0 left-0 p-4 md:p-0 md:flex md:flex-row md:justify-between`}
 			>
-				<div class="flex flex-row justify-between items-end md:w-[10%] text-5xl">
+				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
 					<a href="/" title="logo">
 						<h2>Digency</h2>
 					</a>
@@ -50,50 +50,70 @@ export default component$<ChildProps>(
 				<div
 					class={`${
 						mobileMenuState.isMenuOpen ? "visible" : "invisible"
-					} h-full flex flex-col justify-around`}
+					} md:visible md:w-full h-full md:h-auto flex flex-col md:flex-row justify-around md:justify-between`}
 				>
-					<ul class={"p-5 w-full text-center"}>
+					<ul
+						class={
+							"p-5 w-full md:flex md:flex-row md:justify-center text-center text-[--link-color-light] dark:text-[--link-color]"
+						}
+					>
 						<li>
-							<Link class={"block py-2 text-3xl md:text-lg"} href="#hero">
+							<Link
+								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								href="#hero"
+							>
 								Home
 							</Link>
 						</li>
 						<li>
-							<Link class={"block py-2 text-3xl md:text-lg"} href="#about">
+							<Link
+								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								href="#about"
+							>
 								About
 							</Link>
 						</li>
 						<li>
-							<Link class={"block py-2 text-3xl md:text-lg"} href="#service">
+							<Link
+								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								href="#service"
+							>
 								Service
 							</Link>
 						</li>
 						<li>
-							<Link class={"block py-2 text-3xl md:text-lg"} href="#projects">
+							<Link
+								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								href="#projects"
+							>
 								Projects
 							</Link>
 						</li>
 						<li>
-							<Link class={"block py-2 text-3xl md:text-lg"} href="#blog">
+							<Link
+								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								href="#blog"
+							>
 								Blog
 							</Link>
 						</li>
 					</ul>
-					<div class={"w-full flex justify-center"}>
+					<div class={"w-full md:w-[20%] flex justify-center items-center"}>
 						<button
 							class={
-								"rounded-full px-2 w-1/5 flex flex-row items-center capitalize text-xl ring-1 ring-black ring-offset-black dark:ring-white dark:ring-offset-white"
+								"rounded-full px-5 md:h-5 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] dark:text-white"
 							}
 							onClick$={() =>
 								(theme.value = theme.value === "dark" ? "light" : "dark")
 							}
 						>
-							{theme.value === "dark" ? (
+							{theme.value === "light" ? (
 								<MdiDark class="cursor-pointer" />
 							) : (
 								<MdiLight class="cursor-pointer" />
-							)}{" "}
-							{theme.value}
+							)}
+							{"   "}
+							{theme.value === "dark" ? "light" : "dark"}
 						</button>
 					</div>
 				</div>

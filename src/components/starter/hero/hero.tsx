@@ -5,7 +5,11 @@ export default component$(() => {
 	return (
 		<section
 			id="hero"
-			class={["container", styles.wrapper, "dark:bg-black dark:text-white"]}
+			class={[
+				"container",
+				styles.wrapper,
+				"bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]",
+			]}
 		>
 			<div style={{ width: "50%" }}>
 				<h1>

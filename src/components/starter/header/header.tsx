@@ -8,7 +8,11 @@ interface ChildProps {
 export default component$<ChildProps>(
 	({ mobileMenuState: mobileMenuState }) => {
 		return (
-			<header class={"relative bg-transparent text-black dark:text-white"}>
+			<header
+				class={
+					"bg-[--body-bg-light] dark:bg-[--body-bg] relative h-20 md:h-auto font-extrabold"
+				}
+			>
 				<Navbar mobileMenuState={mobileMenuState} />
 			</header>
 		);
