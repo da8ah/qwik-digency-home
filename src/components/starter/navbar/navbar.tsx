@@ -1,4 +1,9 @@
-import { component$, useContext } from "@builder.io/qwik";
+import {
+	component$,
+	useContext,
+	useSignal,
+	useVisibleTask$,
+} from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { ThemeContext } from "~/routes/layout";
 import {
@@ -17,13 +22,32 @@ export default component$<ChildProps>(
 		// ThemeContext
 		const theme = useContext(ThemeContext);
 
+		const isFixed = useSignal(false);
+		useVisibleTask$(
+			({ track, cleanup }) => {
+				track(() => window.scrollY);
+				const onScroll = () => {
+					if (window.scrollY > 1) {
+						isFixed.value = true;
+					} else {
+						isFixed.value = false;
+					}
+				};
+
+				window.addEventListener("scroll", onScroll);
+
+				cleanup(() => window.removeEventListener("scroll", onScroll));
+			},
+			{ strategy: "document-ready" },
+		);
+
 		return (
 			<nav
-				class={`${
+				class={`${isFixed.value ? "pb-2 md:fixed" : "py-0 md:relative"} ${
 					mobileMenuState.isMenuOpen
 						? "h-screen bg-[--body-bg-light] dark:bg-[--btn-secondary-bg]"
-						: "h-auto bg-transparent"
-				} fixed md:relative md:h-auto w-full top-0 left-0 p-4 md:p-0 md:flex md:flex-row md:justify-between`}
+						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--btn-secondary-bg]"
+				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 md:flex md:flex-row md:justify-between`}
 			>
 				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
 					<a href="/" title="logo">
@@ -49,8 +73,8 @@ export default component$<ChildProps>(
 				</div>
 				<div
 					class={`${
-						mobileMenuState.isMenuOpen ? "visible" : "invisible"
-					} md:visible md:w-full h-full md:h-auto flex flex-col md:flex-row justify-around md:justify-between`}
+						mobileMenuState.isMenuOpen ? "flex" : "hidden"
+					} md:w-full h-full md:h-auto flex-col md:flex md:flex-row justify-around md:justify-between`}
 				>
 					<ul
 						class={
@@ -101,7 +125,7 @@ export default component$<ChildProps>(
 					<div class={"w-full md:w-[20%] flex justify-center items-center"}>
 						<button
 							class={
-								"rounded-full px-5 md:h-5 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] dark:text-white"
+								"rounded-full px-5 md:h-7 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] dark:text-white"
 							}
 							onClick$={() =>
 								(theme.value = theme.value === "dark" ? "light" : "dark")

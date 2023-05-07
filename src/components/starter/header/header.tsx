@@ -10,7 +10,7 @@ export default component$<ChildProps>(
 		return (
 			<header
 				class={
-					"bg-[--body-bg-light] dark:bg-[--body-bg] relative h-20 md:h-auto font-extrabold"
+					"bg-[--body-bg-light] dark:bg-[--body-bg] relative h-20 font-extrabold"
 				}
 			>
 				<Navbar mobileMenuState={mobileMenuState} />
