@@ -24,8 +24,7 @@ export default component$<ChildProps>(
 
 		const isFixed = useSignal(false);
 		useVisibleTask$(
-			({ track, cleanup }) => {
-				track(() => window.scrollY);
+			({ cleanup }) => {
 				const onScroll = () => {
 					if (window.scrollY > 1) {
 						isFixed.value = true;
@@ -35,7 +34,6 @@ export default component$<ChildProps>(
 				};
 
 				window.addEventListener("scroll", onScroll);
-
 				cleanup(() => window.removeEventListener("scroll", onScroll));
 			},
 			{ strategy: "document-ready" },
@@ -43,11 +41,15 @@ export default component$<ChildProps>(
 
 		return (
 			<nav
-				class={`${isFixed.value ? "pb-2 md:fixed" : "py-0 md:relative"} ${
+				class={`${
+					isFixed.value
+						? "pb-2 md:fixed md:dark:bg-[--btn-secondary-bg]"
+						: "py-0 md:relative"
+				} ${
 					mobileMenuState.isMenuOpen
 						? "h-screen bg-[--body-bg-light] dark:bg-[--btn-secondary-bg]"
-						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--btn-secondary-bg]"
-				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 md:flex md:flex-row md:justify-between`}
+						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--btn-secondary-bg] md:hover:dark:bg-none"
+				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 lg:px-20 md:flex md:flex-row md:justify-between`}
 			>
 				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
 					<a href="/" title="logo">
@@ -83,7 +85,7 @@ export default component$<ChildProps>(
 					>
 						<li>
 							<Link
-								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
 								href="#hero"
 							>
 								Home
@@ -91,7 +93,7 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
 								href="#about"
 							>
 								About
@@ -99,7 +101,7 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
 								href="#service"
 							>
 								Service
@@ -107,7 +109,7 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
 								href="#projects"
 							>
 								Projects
@@ -115,7 +117,7 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-5 text-3xl md:text-lg"}
+								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
 								href="#blog"
 							>
 								Blog
@@ -131,11 +133,13 @@ export default component$<ChildProps>(
 								(theme.value = theme.value === "dark" ? "light" : "dark")
 							}
 						>
-							{theme.value === "light" ? (
-								<MdiDark class="cursor-pointer" />
-							) : (
-								<MdiLight class="cursor-pointer" />
-							)}
+							<span class={"text-2xl"}>
+								{theme.value === "light" ? (
+									<MdiDark class="cursor-pointer" />
+								) : (
+									<MdiLight class="cursor-pointer" />
+								)}
+							</span>
 							{"   "}
 							{theme.value === "dark" ? "light" : "dark"}
 						</button>
