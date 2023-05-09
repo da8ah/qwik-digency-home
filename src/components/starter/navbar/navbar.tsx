@@ -43,12 +43,12 @@ export default component$<ChildProps>(
 			<nav
 				class={`${
 					isFixed.value
-						? "pb-2 md:fixed md:dark:bg-[--btn-secondary-bg]"
-						: "py-0 md:relative"
+						? "pb-2 md:fixed md:bg-[--body-bg-light] md:dark:bg-[--btn-secondary-bg] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--btn-secondary-bg]"
+						: "py-0 md:relative md:bg-transparent md:dark:bg-transparent"
 				} ${
 					mobileMenuState.isMenuOpen
-						? "h-screen bg-[--body-bg-light] dark:bg-[--btn-secondary-bg]"
-						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--btn-secondary-bg] md:hover:dark:bg-none"
+						? "h-screen bg-[--body-bg-light] dark:bg-[--body-bg]"
+						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--body-bg]"
 				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 lg:px-20 md:flex md:flex-row md:justify-between`}
 			>
 				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
