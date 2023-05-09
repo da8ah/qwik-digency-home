@@ -1,27 +1,44 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./hero.module.css";
 
 export default component$(() => {
 	return (
 		<section
 			id="hero"
-			class={[
-				"container",
-				styles.wrapper,
-				"bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]",
-			]}
+			class={
+				"py-10 px-1 flex flex-col-reverse items-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
+			}
 		>
-			<div style={{ width: "50%" }}>
-				<h1>
-					We're Creating Perfect Digital Products To
-					<span class="highlight">Promote Your Brand</span>
+			<div class={""}>
+				<h1
+					class={
+						"text-3xl font-extrabold text-[--heading-color-light] dark:text-[--heading-color]"
+					}
+				>
+					We're Creating Perfect <br />
+					Digital Products To <br />
+					<span
+						class={"text-[--primary-color-light] dark:text-[--primary-color]"}
+					>
+						Promote Your Brand
+					</span>
 				</h1>
-				<p>
+				<p
+					class={
+						"py-10 text-xl text-[--small-text-color-light] dark:text-[--small-text-color]"
+					}
+				>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
-				<div class={styles["button-group"]}>
+				<div
+					class={
+						"flex flex-row justify-around font-bold text-[--small-text-color-light] dark:text-[--small-text-color]"
+					}
+				>
 					<button
+						class={
+							"rounded-full p-3 bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg]"
+						}
 						onClick$={async () => {
 							const defaults = {
 								spread: 360,
@@ -75,18 +92,14 @@ export default component$(() => {
 							setTimeout(shoot, 400);
 						}}
 					>
-						Time to celebrate
+						Get Started Now
 					</button>
-					<a
-						href="https://qwik.builder.io/docs"
-						target="_blank"
-						class="button button-dark"
-					>
+					<a class="rounded-full p-3 bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]">
 						Explore the docs
 					</a>
 				</div>
 			</div>
-			<div style={{ width: "50%" }}>
+			<div class={"w-[90%]"}>
 				<img
 					src="img/hero-img.png"
 					alt="A graphic image of people and applications"
