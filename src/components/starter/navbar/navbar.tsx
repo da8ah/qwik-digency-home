@@ -11,7 +11,7 @@ import {
 	HeroiconsSquaresPlus20Solid as HiSquarePlus,
 	MdiLightningBoltCircle as MdiDark,
 	MdiLightningBolt as MdiLight,
-} from "../icons/icons";
+} from "~/components/assets/icons";
 
 interface ChildProps {
 	mobileMenuState: { isMenuOpen: boolean };
