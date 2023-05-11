@@ -26,10 +26,6 @@ export default component$(() => {
 	// ThemeContext
 	const theme = useSignal("dark");
 	useContextProvider(ThemeContext, theme);
-
-	// NavbarOverflow
-	const mobileNavbarOverflow = useStore({ isMenuOpen: false }, { deep: false });
-
 	useVisibleTask$(
 		({ track }) => {
 			track(() => theme.value);
@@ -39,6 +35,9 @@ export default component$(() => {
 		},
 		{ strategy: "document-ready" },
 	);
+
+	// NavbarOverflow
+	const mobileNavbarOverflow = useStore({ isMenuOpen: false }, { deep: false });
 
 	return (
 		<>

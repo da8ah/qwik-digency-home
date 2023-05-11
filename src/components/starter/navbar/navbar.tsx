@@ -1,17 +1,12 @@
-import {
-	component$,
-	useContext,
-	useSignal,
-	useVisibleTask$,
-} from "@builder.io/qwik";
+import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { ThemeContext } from "~/routes/layout";
 import {
 	HeroiconsSquares2x220Solid as HiSquare,
 	HeroiconsSquaresPlus20Solid as HiSquarePlus,
 	MdiLightningBoltCircle as MdiDark,
 	MdiLightningBolt as MdiLight,
 } from "~/components/assets/icons";
+import { ThemeContext } from "~/routes/layout";
 
 interface ChildProps {
 	mobileMenuState: { isMenuOpen: boolean };
@@ -23,24 +18,17 @@ export default component$<ChildProps>(
 		const theme = useContext(ThemeContext);
 
 		const isFixed = useSignal(false);
-		useVisibleTask$(
-			({ cleanup }) => {
-				const onScroll = () => {
-					if (window.scrollY > 1) {
-						isFixed.value = true;
-					} else {
-						isFixed.value = false;
-					}
-				};
-
-				window.addEventListener("scroll", onScroll);
-				cleanup(() => window.removeEventListener("scroll", onScroll));
-			},
-			{ strategy: "document-ready" },
-		);
+		const changeFixedPosition = $(() => {
+			if (window.scrollY > 0) {
+				isFixed.value = true;
+			} else {
+				isFixed.value = false;
+			}
+		});
 
 		return (
 			<nav
+				window:onScroll$={changeFixedPosition}
 				class={`${
 					isFixed.value
 						? "pb-2 md:fixed md:bg-[--body-bg-light] md:dark:bg-[--btn-secondary-bg] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--btn-secondary-bg]"

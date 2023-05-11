@@ -38,7 +38,7 @@ export default component$(() => {
 					}
 				>
 					<Button
-						rounded="rounded-full"
+						rounded="full"
 						variant="secondary"
 						onClick$={() => shootConfetti()}
 					>
