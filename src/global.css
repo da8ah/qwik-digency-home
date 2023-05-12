@@ -22,7 +22,7 @@
   --primary-color: #379cf6;
   --heading-color: #fff;
   --btn-primary-bg: #379cf6;
-  --btn-secondary-bg: #090238;
+  --btn-secondary-bg: transparent;
   --team-card-bg: #1b2352;
   --link-color: #fff;
   --link-active: #379cf6;
@@ -47,8 +47,8 @@
   /* .light-theme */
   --body-bg-light: rgb(255, 255, 255);
   --heading-color-light: #0c123d;
-  --btn-secondary-bg-light: #816aff;
-  --btn-primary-bg-light: #fff;
+  --btn-secondary-bg-light: #fff;
+  --btn-primary-bg-light: #816aff;
   --primary-color-light: #816aff;
   --counter-color-light: #fff;
   --counter-section-bg-light: #816aff;

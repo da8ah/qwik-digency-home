@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import Navbar from "~/components/starter/navbar";
 
-interface ChildProps {
+interface NavbarProps {
 	mobileMenuState: { isMenuOpen: boolean };
 }
 
-export default component$<ChildProps>(
+export default component$<NavbarProps>(
 	({ mobileMenuState: mobileMenuState }) => {
 		return (
 			<header

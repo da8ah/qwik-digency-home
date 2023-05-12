@@ -13,7 +13,7 @@ export default component$(() => {
 			<div>
 				<h1
 					class={
-						"text-3xl font-extrabold text-[--heading-color-light] dark:text-[--heading-color]"
+						"text-3xl text-center md:text-left font-extrabold text-[--heading-color-light] dark:text-[--heading-color]"
 					}
 				>
 					We're Creating Perfect <br />
@@ -37,15 +37,10 @@ export default component$(() => {
 						"flex flex-row justify-around font-bold text-[--small-text-color-light] dark:text-[--small-text-color]"
 					}
 				>
-					<Button
-						rounded="full"
-						variant="secondary"
-						size="lg"
-						onClick$={() => shootConfetti()}
-					>
+					<Button rounded="md" size="lg" onClick$={() => shootConfetti()}>
 						Get Started Now
 					</Button>
-					<Button href="" variant="primary" size="lg">
+					<Button secondary href="" rounded="md" size="lg">
 						Explore the docs
 					</Button>
 				</div>
