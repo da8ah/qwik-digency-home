@@ -40,9 +40,9 @@ const Button = component$<ButtonProps>((props) => {
 					href={props.href}
 					class={`${props.class || ""} ${r} ${
 						!props.secondary
-							? "uppercase font-bold text-[#c73e89] bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
-							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg]"
-					} ${p} active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus-ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
+							? "uppercase md:capitalize font-bold bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
+							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400"
+					} ${p} text-black dark:text-white active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
 				>
 					<Slot />
 				</a>
@@ -51,9 +51,9 @@ const Button = component$<ButtonProps>((props) => {
 					{...props}
 					class={`${props.class || ""} ${r} ${
 						!props.secondary
-							? "uppercase font-bold text-[#c73e89] bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
-							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg]"
-					} ${p} active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus-ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
+							? "uppercase md:capitalize font-bold bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
+							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400"
+					} ${p} text-black dark:text-white active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
 					onClick$={props.onClick$ && props.onClick$}
 				>
 					<Slot />

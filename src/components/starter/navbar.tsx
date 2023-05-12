@@ -31,7 +31,7 @@ export default component$<ChildProps>(
 				window:onScroll$={changeFixedPosition}
 				class={`${
 					isFixed.value
-						? "pb-2 md:fixed md:bg-[--body-bg-light] md:dark:bg-[--btn-secondary-bg] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--btn-secondary-bg]"
+						? "pb-2 md:fixed md:bg-[--body-bg-light] md:dark:bg-[--navbar-bg] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--navbar-bg]"
 						: "py-0 md:relative md:bg-transparent md:dark:bg-transparent"
 				} ${
 					mobileMenuState.isMenuOpen
@@ -115,11 +115,13 @@ export default component$<ChildProps>(
 					<div class={"w-full md:w-[20%] flex justify-center items-center"}>
 						<button
 							class={
-								"rounded-full px-5 md:h-7 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] dark:text-white"
+								"rounded-full px-5 md:h-7 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] text-black dark:text-white"
 							}
-							onClick$={() =>
-								(theme.value = theme.value === "dark" ? "light" : "dark")
-							}
+							onClick$={() => {
+								theme.value = theme.value === "dark" ? "light" : "dark";
+								mobileMenuState.isMenuOpen = false;
+								document.body.classList.remove("overflow-hidden");
+							}}
 						>
 							<span class={"text-2xl"}>
 								{theme.value === "light" ? (
