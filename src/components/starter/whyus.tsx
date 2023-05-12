@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import Infobox from "../infobox/infobox";
 
 export default component$(() => {
 	return (
@@ -16,7 +15,6 @@ export default component$(() => {
 				hendrerit gravida rutrum quisque. Integer eget aliquet nibh praesent
 				tristique magna sit amet purus.
 			</p>
-			<Infobox q:slot="title">Hola</Infobox>
 		</section>
 	);
 });

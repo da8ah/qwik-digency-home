@@ -10,7 +10,7 @@ export default component$(() => {
 				"py-10 px-1 flex flex-col-reverse items-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
 			}
 		>
-			<div class={""}>
+			<div>
 				<h1
 					class={
 						"text-3xl font-extrabold text-[--heading-color-light] dark:text-[--heading-color]"
@@ -26,7 +26,7 @@ export default component$(() => {
 				</h1>
 				<p
 					class={
-						"py-10 text-xl text-[--small-text-color-light] dark:text-[--small-text-color]"
+						"py-10 text-xl text-center md:text-left text-[--small-text-color-light] dark:text-[--small-text-color]"
 					}
 				>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -40,11 +40,12 @@ export default component$(() => {
 					<Button
 						rounded="full"
 						variant="secondary"
+						size="lg"
 						onClick$={() => shootConfetti()}
 					>
 						Get Started Now
 					</Button>
-					<Button href="" variant="primary">
+					<Button href="" variant="primary" size="lg">
 						Explore the docs
 					</Button>
 				</div>
