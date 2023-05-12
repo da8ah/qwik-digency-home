@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import Navbar from "../navbar";
+import Navbar from "~/components/starter/navbar";
 
 interface ChildProps {
 	mobileMenuState: { isMenuOpen: boolean };
