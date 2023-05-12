@@ -35,10 +35,7 @@
       rgba(29, 129, 176, 1) 55%,
       rgba(35, 93, 173, 1) 75%);
   --body-bg: rgba(6, 11, 26, 1);
-  --navbar-bg: linear-gradient(45deg,
-      rgba(15, 18, 61, 1) 33%,
-      rgba(15, 18, 61, 1) 52%,
-      rgba(11, 41, 69, 1) 84%);
+  --navbar-bg: #0f123d;
   --newsletter-bg: linear-gradient(90deg,
       rgba(27, 9, 115, 1) 20%,
       rgba(23, 9, 96, 1) 38%,

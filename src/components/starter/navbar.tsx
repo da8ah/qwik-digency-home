@@ -31,12 +31,12 @@ export default component$<ChildProps>(
 				window:onScroll$={changeFixedPosition}
 				class={`${
 					isFixed.value
-						? "pb-2 md:fixed md:bg-[--body-bg-light] md:dark:bg-[--navbar-bg] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--navbar-bg]"
+						? "pb-2 md:fixed shadow-lg backdrop-blur-sm bg-[rgba(255,255,255,.9)] dark:bg-[rgba(6,11,26,.9)] md:dark:bg-[rgba(15,18,61,.9)] md:hover:bg-[--body-bg-light] md:hover:dark:bg-[--navbar-bg]"
 						: "py-0 md:relative md:bg-transparent md:dark:bg-transparent"
 				} ${
 					mobileMenuState.isMenuOpen
 						? "h-screen bg-[--body-bg-light] dark:bg-[--body-bg]"
-						: "h-auto bg-transparent hover:bg-[--body-bg-light] hover:dark:bg-[--body-bg]"
+						: "h-auto hover:bg-[--body-bg-light] hover:dark:bg-[--body-bg]"
 				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 lg:px-20 md:flex md:flex-row md:justify-between`}
 			>
 				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
@@ -73,7 +73,9 @@ export default component$<ChildProps>(
 					>
 						<li>
 							<Link
-								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
 								href="#hero"
 							>
 								Home
@@ -81,7 +83,9 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
 								href="#about"
 							>
 								About
@@ -89,7 +93,9 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
 								href="#service"
 							>
 								Service
@@ -97,7 +103,9 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
 								href="#projects"
 							>
 								Projects
@@ -105,7 +113,9 @@ export default component$<ChildProps>(
 						</li>
 						<li>
 							<Link
-								class={"block py-2 md:mx-2 lg:mx-5 text-3xl md:text-lg"}
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
 								href="#blog"
 							>
 								Blog
@@ -115,7 +125,7 @@ export default component$<ChildProps>(
 					<div class={"w-full md:w-[20%] flex justify-center items-center"}>
 						<button
 							class={
-								"rounded-full px-5 md:h-7 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] text-[--primary-color-light] text-black dark:text-white"
+								"rounded-full px-5 md:h-7 w-1/3 md:w-auto flex flex-row justify-center items-center capitalize text-2xl md:text-lg md:bg-transparent md:dark:bg-transparent bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] dark:text-white text-black md:dark:text-[--primary-color-light] md:text-[--primary-color]"
 							}
 							onClick$={() => {
 								theme.value = theme.value === "dark" ? "light" : "dark";
