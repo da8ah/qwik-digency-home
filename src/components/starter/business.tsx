@@ -8,42 +8,35 @@ import {
 	RiRocketLine,
 } from "~/components/assets/icons";
 
-const liArr = [
-	{
-		icon: (
-			<RiAppsLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
-		),
-		title: "App Development",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
-	},
-	{
-		icon: (
-			<RiCodeSSlashLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
-		),
-		title: "Web Design",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
-	},
-	{
-		icon: (
-			<RiLandscapeLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
-		),
-		title: "Graphics Design",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
-	},
-	{
-		icon: (
-			<RiRocketLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
-		),
-		title: "Digital Marketing",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
-	},
-];
-
 export default component$(() => {
+	const classIcons =
+		"w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]";
+	const liArr = [
+		{
+			icon: <RiAppsLine class={classIcons} />,
+			title: "App Development",
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+		},
+		{
+			icon: <RiCodeSSlashLine class={classIcons} />,
+			title: "Web Design",
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+		},
+		{
+			icon: <RiLandscapeLine class={classIcons} />,
+			title: "Graphics Design",
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+		},
+		{
+			icon: <RiRocketLine class={classIcons} />,
+			title: "Digital Marketing",
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+		},
+	];
 	return (
 		<section
 			id="business"

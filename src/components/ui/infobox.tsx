@@ -1,19 +1,22 @@
-import { component$ } from "@builder.io/qwik";
+import { Slot, component$ } from "@builder.io/qwik";
 
 type InfoboxProps = {
-	imgURL: string;
-	imgAlt: string;
 	title: string;
 	description: string;
 };
 export default component$<InfoboxProps>((props) => {
-	const { imgURL, imgAlt, title, description } = props;
+	const { title, description } = props;
 	return (
-		<li>
-			{imgURL + imgAlt}
-			{/* <img src={imgURL} alt={imgAlt} /> */}
-			<div>
-				<h4>{title}</h4>
+		<li
+			class={
+				"w-full flex flex-row justify-start items-center text-justify text-[--small-text-color-light] dark:text-[--small-text-color]"
+			}
+		>
+			<div class={"w-[15%] px-1"}>
+				<Slot />
+			</div>
+			<div class={"w-[85%] pr-2 leading-normal"}>
+				<h4 class={"font-bold"}>{title}</h4>
 				<p>{description}</p>
 			</div>
 		</li>
