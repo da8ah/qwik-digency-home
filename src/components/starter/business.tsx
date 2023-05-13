@@ -1,14 +1,45 @@
 import { component$ } from "@builder.io/qwik";
 import { BusinessCard } from "~/components/ui/cards";
 import SectionTitle from "~/components/ui/title";
+import {
+	RiAppsLine,
+	RiCodeSSlashLine,
+	RiLandscapeLine,
+	RiRocketLine,
+} from "~/components/assets/icons";
 
 const liArr = [
 	{
-		imgURL: "projects-img1.png",
-		imgAlt: "",
-		title: "Business Startup",
+		icon: (
+			<RiAppsLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+		),
+		title: "App Development",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+	},
+	{
+		icon: (
+			<RiCodeSSlashLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+		),
+		title: "Web Design",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+	},
+	{
+		icon: (
+			<RiLandscapeLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+		),
+		title: "Graphics Design",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
+	},
+	{
+		icon: (
+			<RiRocketLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+		),
+		title: "Digital Marketing",
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut et dolore magna aliqua tempor.",
 	},
 ];
 
@@ -17,20 +48,26 @@ export default component$(() => {
 		<section
 			id="business"
 			class={
-				"py-10 px-1 flex flex-col-reverse items-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
+				"py-10 px-1 md:p-20 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
 			}
 		>
-			<div>
-				<h3>Our Services</h3>
+			<div class={"w-full text-center"}>
+				<h3 class={"text-2xl"}>Our Services</h3>
 				<SectionTitle
+					class="pt-5 pb-10 text-3xl"
 					capitalize
-					title="Save time managing \n your business with"
-					bold="our best services"
+					title={"Save time managing your business with"}
+					bold={"our best services"}
+					wrap
 				/>
 			</div>
-			<ul>
+			<ul class={"flex flex-row justify-center items-center"}>
 				{liArr.map((li, index) => {
-					return <BusinessCard key={index} {...li} />;
+					return (
+						<BusinessCard key={index} {...li}>
+							{li.icon}
+						</BusinessCard>
+					);
 				})}
 			</ul>
 		</section>

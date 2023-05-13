@@ -27,9 +27,9 @@
   --link-color: #fff;
   --link-active: #379cf6;
   --card-bg: linear-gradient(45deg,
-      rgba(15, 18, 61, 1) 33%,
-      rgba(15, 18, 61, 1) 52%,
-      rgba(11, 41, 69, 1) 84%);
+      #0f123d 33%,
+      #0f123d 52%,
+      #0b2945 84%);
   --counter-color: linear-gradient(90deg,
       #02bba6 30%,
       #1d81b0 55%,

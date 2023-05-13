@@ -1,20 +1,35 @@
-import { component$ } from "@builder.io/qwik";
+import { Slot, component$ } from "@builder.io/qwik";
 
 type BusinessCardProps = {
-	imgURL: string;
-	imgAlt: string;
 	title: string;
 	description: string;
 };
 export const BusinessCard = component$<BusinessCardProps>((props) => {
-	const { imgURL, imgAlt, title, description } = props;
+	const { title, description } = props;
 	return (
-		<li>
-			<div>
-				{imgURL + imgAlt}
-				{/* <img src={imgURL} alt={imgAlt} /> */}
-				<h3>{title}</h3>
-				<p>{description}</p>
+		<li class={"w-[24%] mx-4"}>
+			<div
+				class={
+					"rounded-sm py-10 flex flex-col justify-center text-center font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
+				}
+			>
+				<div class={"flex justify-center"}>
+					<Slot />
+				</div>
+				<h3
+					class={
+						"py-7 text-lg text-[--primary-color-light] dark:text-[--primary-color]"
+					}
+				>
+					{title}
+				</h3>
+				<p
+					class={
+						"px-[0.5rem] text-xs text-[--small-text-color-light] dark:text-[--small-text-color] leading-loose"
+					}
+				>
+					{description}
+				</p>
 			</div>
 		</li>
 	);
