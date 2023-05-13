@@ -1,7 +1,7 @@
 {
   "name": "my-qwik-basic-starter",
   "description": "App with Routing built-in (recommended)",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "engines": {
     "node": ">=15.0.0"
   },

@@ -7,7 +7,11 @@ type BusinessCardProps = {
 export const BusinessCard = component$<BusinessCardProps>((props) => {
 	const { title, description } = props;
 	return (
-		<li class={"w-[24%] mx-4"}>
+		<li
+			class={
+				"w-full p-4 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
+			}
+		>
 			<div
 				class={
 					"rounded-sm py-10 flex flex-col justify-center text-center font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"

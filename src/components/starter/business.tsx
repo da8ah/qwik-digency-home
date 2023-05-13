@@ -11,7 +11,7 @@ import {
 const liArr = [
 	{
 		icon: (
-			<RiAppsLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+			<RiAppsLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
 		),
 		title: "App Development",
 		description:
@@ -19,7 +19,7 @@ const liArr = [
 	},
 	{
 		icon: (
-			<RiCodeSSlashLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+			<RiCodeSSlashLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
 		),
 		title: "Web Design",
 		description:
@@ -27,7 +27,7 @@ const liArr = [
 	},
 	{
 		icon: (
-			<RiLandscapeLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+			<RiLandscapeLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
 		),
 		title: "Graphics Design",
 		description:
@@ -35,7 +35,7 @@ const liArr = [
 	},
 	{
 		icon: (
-			<RiRocketLine class="w-[50px] h-[50px] p-2 ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
+			<RiRocketLine class="w-[50px] h-[50px] p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]" />
 		),
 		title: "Digital Marketing",
 		description:
@@ -48,7 +48,7 @@ export default component$(() => {
 		<section
 			id="business"
 			class={
-				"py-10 px-1 md:p-20 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
+				"py-10 px-1 lg:p-20 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
 			}
 		>
 			<div class={"w-full text-center"}>
@@ -61,7 +61,11 @@ export default component$(() => {
 					wrap
 				/>
 			</div>
-			<ul class={"flex flex-row justify-center items-center"}>
+			<ul
+				class={
+					"flex flex-row flex-wrap lg:flex-nowrap justify-center items-center"
+				}
+			>
 				{liArr.map((li, index) => {
 					return (
 						<BusinessCard key={index} {...li}>
