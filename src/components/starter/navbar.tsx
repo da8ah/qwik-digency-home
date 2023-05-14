@@ -40,7 +40,7 @@ export default component$<ChildProps>(
 				} fixed md:h-auto w-full top-0 left-0 px-1 md:p-0 lg:px-20 md:flex md:flex-row md:justify-between`}
 			>
 				<div class="flex flex-row justify-between items-end md:items-center md:w-auto text-5xl text-[--primary-color-light] dark:text-[--primary-color]">
-					<a href="/" title="logo">
+					<a href="https://www.youtube.com/watch?v=fKp8XbVETk4" title="logo">
 						<h2>Digency</h2>
 					</a>
 					{mobileMenuState.isMenuOpen ? (

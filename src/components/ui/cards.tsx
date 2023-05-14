@@ -1,5 +1,9 @@
 import { Slot, component$ } from "@builder.io/qwik";
-import { RiLinkedinFill, RiTwitterFill } from "~/components/assets/icons";
+import {
+	RiArrowRightLine,
+	RiLinkedinFill,
+	RiTwitterFill,
+} from "~/components/assets/icons";
 
 type BusinessCardProps = {
 	title: string;
@@ -54,10 +58,10 @@ export const TeamCard = component$<TeamCardProps>((props) => {
 		>
 			<div
 				class={
-					"rounded-sm flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
+					"rounded-lg flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
 				}
 			>
-				<div class={"h-40 flex justify-center bg-white"}>
+				<div class={"rounded-t-lg h-40 flex justify-center bg-white"}>
 					<Slot />
 				</div>
 				<div class={"px-4 py-7"}>
@@ -75,9 +79,9 @@ export const TeamCard = component$<TeamCardProps>((props) => {
 					>
 						{rol}
 					</p>
-					<div class={"w-[50%] flex flex-row justify-between"}>
-						<RiLinkedinFill class={"w-[20px] h-[20px]"} />
-						<RiTwitterFill class={"w-[20px] h-[20px]"} />
+					<div class={"w-[30%] flex flex-row justify-between"}>
+						<RiLinkedinFill class={"w-[20px] h-[20px] cursor-pointer"} />
+						<RiTwitterFill class={"w-[20px] h-[20px] cursor-pointer"} />
 					</div>
 				</div>
 			</div>
@@ -86,22 +90,43 @@ export const TeamCard = component$<TeamCardProps>((props) => {
 });
 
 type BlogCardProps = {
-	imgURL: string;
-	imgAlt: string;
 	title: string;
 	description: string;
 };
 export const BlogCard = component$<BlogCardProps>((props) => {
-	const { imgURL, imgAlt, title, description } = props;
+	const { title, description } = props;
 	return (
-		<li>
-			<div>
-				<h3>{title}</h3>
-				{imgURL + imgAlt}
-				{/* <img src={imgURL} alt={imgAlt} /> */}
-				<p>{description}</p>
-				<div>
-					<img src="" alt="go to icon" />
+		<li
+			class={
+				"w-full p-4 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
+			}
+		>
+			<div
+				class={
+					"rounded-md flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
+				}
+			>
+				<h3
+					class={
+						"px-4 py-7 text-lg text-[--primary-color-light] dark:text-[--primary-color]"
+					}
+				>
+					{title}
+				</h3>
+				<div class={"flex justify-cente"}>
+					<Slot />
+				</div>
+				<div class={"px-4 py-7"}>
+					<p
+						class={
+							"line-clamp-3 py-2 text-xs text-[--small-text-color-light] dark:text-[--small-text-color] leading-loose"
+						}
+					>
+						{description}
+					</p>
+					<div class={"w-full"}>
+						<RiArrowRightLine class={"w-[20px] h-[20px] cursor-pointer"} />
+					</div>
 				</div>
 			</div>
 		</li>

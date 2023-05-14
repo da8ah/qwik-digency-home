@@ -37,9 +37,9 @@
   --body-bg: rgba(6, 11, 26, 1);
   --navbar-bg: #0f123d;
   --newsletter-bg: linear-gradient(90deg,
-      rgba(27, 9, 115, 1) 20%,
-      rgba(23, 9, 96, 1) 38%,
-      rgba(14, 9, 56, 1) 100%);
+      #1b0973 20%,
+      #170960 38%,
+      #0e0938 100%);
   --testimonial-bg: #1a0f4f;
   --font-name: "Roboto", sans-serif;
   --small-text-color: rgba(255, 255, 255, 0.774);
@@ -56,9 +56,9 @@
   --link-color-light: #0c123d;
   --link-active-light: #816aff;
   --newsletter-bg-light: linear-gradient(180deg,
-      rgba(189, 243, 255, 1) 29%,
-      rgba(193, 243, 255, 1) 50%,
-      rgba(226, 250, 255, 1) 78%);
+      #379cf6 29%,
+      #235dad 50%,
+      #816aff 78%);
   --small-text-color-light: #000;
   --card-bg-light: #fff;
   --testimonial-bg-light: #f7f7f7;

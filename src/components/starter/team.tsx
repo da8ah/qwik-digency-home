@@ -60,10 +60,8 @@ export default component$(() => {
 				<h3 class={"text-2xl"}>Our Team</h3>
 				<SectionTitle
 					class="pt-5 pb-10 text-3xl"
-					capitalize
 					title={"Meet with"}
 					bold={"our team"}
-					wrap
 				/>
 			</div>
 			<ul

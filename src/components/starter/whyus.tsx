@@ -67,7 +67,7 @@ export default component$(() => {
 				}
 			>
 				<img
-					class={"min-[850px]:h-[80%] lg:h-auto shadow-lg bg-blend-overlay"}
+					class={"min-[850px]:h-[80%] lg:h-auto shadow-sm bg-blend-overlay"}
 					src="img/about-us.jpg"
 					alt="A person sitting down reading"
 				/>

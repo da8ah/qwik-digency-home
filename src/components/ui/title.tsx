@@ -5,11 +5,12 @@ type SectionTitleProps = {
 	capitalize?: boolean;
 	title: string;
 	bold: string;
+	opt?: string;
 	wrap?: boolean;
 };
 
 const SectionTitle = component$<SectionTitleProps>((props) => {
-	const { capitalize, title, bold, wrap } = props;
+	const { capitalize, title, bold, opt, wrap } = props;
 	return (
 		<h2
 			class={`${props.class} ${
@@ -21,6 +22,7 @@ const SectionTitle = component$<SectionTitleProps>((props) => {
 				<br class={wrap ? "block" : "hidden"} />
 				{bold}
 			</span>
+			{" " + opt}
 		</h2>
 	);
 });

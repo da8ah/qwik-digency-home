@@ -8,16 +8,9 @@ import {
 	useStore,
 	useVisibleTask$,
 } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
 
 import Footer from "~/components/starter/footer";
 import Header from "~/components/starter/header";
-
-export const useServerTimeLoader = routeLoader$(() => {
-	return {
-		date: new Date().toISOString(),
-	};
-});
 
 export const ThemeContext =
 	createContextId<Signal<"light" | "dark">>("digency.theme");

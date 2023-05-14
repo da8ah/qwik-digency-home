@@ -1,8 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext } from "@builder.io/qwik";
 import { shootConfetti } from "~/components/assets/animations";
 import Button from "~/components/ui/button";
+import { ThemeContext } from "~/routes/layout";
 
 export default component$(() => {
+	// ThemeContext
+	const theme = useContext(ThemeContext);
 	return (
 		<section
 			id="hero"
@@ -56,10 +59,17 @@ export default component$(() => {
 				</div>
 			</div>
 			<div class={"w-[90%] md:w-[45%] lg:w-[50%] flex justify-center"}>
-				<img
-					src="img/hero-img.png"
-					alt="A graphic image of people and applications"
-				/>
+				{theme.value === "dark" ? (
+					<img
+						src="img/hero-img.png"
+						alt="A graphic image of people and applications"
+					/>
+				) : (
+					<img
+						src="img/light-hero-bg.jpg"
+						alt="A graphic image of people and applications"
+					/>
+				)}
 			</div>
 		</section>
 	);
