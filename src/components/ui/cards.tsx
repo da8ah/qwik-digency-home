@@ -1,4 +1,5 @@
 import { Slot, component$ } from "@builder.io/qwik";
+import { RiLinkedinFill, RiTwitterFill } from "~/components/assets/icons";
 
 type BusinessCardProps = {
 	title: string;
@@ -40,23 +41,44 @@ export const BusinessCard = component$<BusinessCardProps>((props) => {
 });
 
 type TeamCardProps = {
-	imgURL: string;
-	imgAlt: string;
-	title: string;
-	description: string;
+	name: string;
+	rol: string;
 };
 export const TeamCard = component$<TeamCardProps>((props) => {
-	const { imgURL, imgAlt, title, description } = props;
+	const { name, rol } = props;
 	return (
-		<li>
-			<div>
-				{imgURL + imgAlt}
-				{/* <img src={imgURL} alt={imgAlt} /> */}
-				<h3>{title}</h3>
-				<p>{description}</p>
-				<div>
-					<img src="" alt="linkedin icon" />
-					<img src="" alt="twitter icon" />
+		<li
+			class={
+				"w-full p-4 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
+			}
+		>
+			<div
+				class={
+					"rounded-sm flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
+				}
+			>
+				<div class={"h-40 flex justify-center bg-white"}>
+					<Slot />
+				</div>
+				<div class={"px-4 py-7"}>
+					<h3
+						class={
+							"text-lg text-[--primary-color-light] dark:text-[--primary-color]"
+						}
+					>
+						{name}
+					</h3>
+					<p
+						class={
+							"py-2 text-xs text-[--small-text-color-light] dark:text-[--small-text-color] leading-loose"
+						}
+					>
+						{rol}
+					</p>
+					<div class={"w-[50%] flex flex-row justify-between"}>
+						<RiLinkedinFill class={"w-[20px] h-[20px]"} />
+						<RiTwitterFill class={"w-[20px] h-[20px]"} />
+					</div>
 				</div>
 			</div>
 		</li>

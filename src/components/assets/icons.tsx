@@ -164,7 +164,6 @@ export function RiRocketLine(props: QwikIntrinsicElements["svg"], key: string) {
 }
 
 // WHYUS
-
 export function RiWifiLine(props: QwikIntrinsicElements["svg"], key: string) {
 	return (
 		<svg
@@ -217,6 +216,49 @@ export function RiCustomerService2Line(
 			<path
 				fill="currentColor"
 				d="M19.938 8H21a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1.062A8.001 8.001 0 0 1 12 23v-2a6 6 0 0 0 6-6V9A6 6 0 0 0 6 9v7H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1.062a8.001 8.001 0 0 1 15.876 0ZM3 10v4h1v-4H3Zm17 0v4h1v-4h-1ZM7.76 15.785l1.06-1.696A5.972 5.972 0 0 0 12 15a5.972 5.972 0 0 0 3.18-.911l1.06 1.696A7.963 7.963 0 0 1 12 17a7.962 7.962 0 0 1-4.24-1.215Z"
+			></path>
+		</svg>
+	);
+}
+
+// TEAM
+export function RiLinkedinFill(
+	props: QwikIntrinsicElements["svg"],
+	key: string,
+) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="1em"
+			height="1em"
+			viewBox="0 0 24 24"
+			{...props}
+			key={key}
+		>
+			<path
+				fill="currentColor"
+				d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"
+			></path>
+		</svg>
+	);
+}
+
+export function RiTwitterFill(
+	props: QwikIntrinsicElements["svg"],
+	key: string,
+) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="1em"
+			height="1em"
+			viewBox="0 0 24 24"
+			{...props}
+			key={key}
+		>
+			<path
+				fill="currentColor"
+				d="M22.212 5.656a8.384 8.384 0 0 1-2.401.658A4.195 4.195 0 0 0 21.649 4c-.82.488-1.719.83-2.655 1.015a4.182 4.182 0 0 0-7.126 3.814a11.874 11.874 0 0 1-8.621-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.739 2.731 1.86 3.481a4.169 4.169 0 0 1-1.894-.523v.051a4.185 4.185 0 0 0 3.355 4.102a4.205 4.205 0 0 1-1.89.072A4.185 4.185 0 0 0 8.02 16.65a8.394 8.394 0 0 1-6.192 1.732a11.831 11.831 0 0 0 6.41 1.88c7.694 0 11.9-6.373 11.9-11.9c0-.18-.004-.362-.012-.541a8.497 8.497 0 0 0 2.086-2.164Z"
 			></path>
 		</svg>
 	);
