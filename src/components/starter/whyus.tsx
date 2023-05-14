@@ -9,7 +9,7 @@ import {
 
 export default component$(() => {
 	const classIcons =
-		"w-[90%] h-full p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]";
+		"rounded-full md:rounded-none w-[90%] h-full p-2 bg-[--primary-color-light] dark:bg-transparent text-white dark:text-[--primary-color-light] ring-2 ring-[--primary-color-light] dark:ring-[--primary-color]";
 	const liArr = [
 		{
 			icon: <RiWifiLine class={classIcons} />,
@@ -34,10 +34,14 @@ export default component$(() => {
 		<section
 			id="whyus"
 			class={
-				"py-10 px-1 lg:p-20 flex flex-row justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color] text-center md:text-left"
+				"py-10 px-1 lg:p-20 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-0 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color] text-center md:text-left"
 			}
 		>
-			<div class={"w-full md:w-[50%] flex flex-col"}>
+			<div
+				class={
+					"w-full px-1 md:px-10 lg:px-0 flex flex-col justify-center md:col-span-1 md:row-span-2"
+				}
+			>
 				<h3 class={"text-2xl"}>Why choose us</h3>
 				<SectionTitle
 					class="pt-5 text-3xl"
@@ -56,19 +60,31 @@ export default component$(() => {
 					risus in hendrerit gravida rutrum quisque. Integer eget aliquet nibh
 					praesent tristique magna sit amet purus.
 				</p>
-				<ul class={"flex flex-col flex-grow justify-between"}>
-					{liArr.map((li, index) => {
-						return (
-							<Infobox key={index} {...li}>
-								{li.icon}
-							</Infobox>
-						);
-					})}
-				</ul>
 			</div>
-			<div class={"hidden md:w-[45%] lg:w-[50%] px-10 md:flex justify-center"}>
-				<img src="img/about-us.jpg" alt="A person sitting down reading" />
+			<div
+				class={
+					"hidden px-10 md:row-span-2 lg:row-span-3 md:flex md:flex-col md:justify-center md:items-center"
+				}
+			>
+				<img
+					class={"min-[850px]:h-[80%] lg:h-auto shadow-lg bg-blend-overlay"}
+					src="img/about-us.jpg"
+					alt="A person sitting down reading"
+				/>
 			</div>
+			<ul
+				class={
+					"md:row-span-1 md:col-span-2 lg:col-span-1 flex flex-col justify-between md:justify-center lg:justify-between"
+				}
+			>
+				{liArr.map((li, index) => {
+					return (
+						<Infobox key={index} {...li}>
+							{li.icon}
+						</Infobox>
+					);
+				})}
+			</ul>
 		</section>
 	);
 });
