@@ -7,7 +7,7 @@ export default component$(() => {
 		<section
 			id="newsletter"
 			class={
-				"py-10 px-1 lg:py-10 lg:px-20 flex flex-row justify-center items-center bg-gradient-to-r from-[#379cf6] via-[#235dad] to-[#816aff] dark:from-[#1b0973] dark:via-[#170960] dark:to-[#0e0938] text-[--primary-color-light] dark:text-[--primary-color]"
+				"py-10 px-1 lg:py-10 lg:px-20 flex flex-row justify-center items-center bg-gradient-to-r from-white via-[#9a89f8] to-[#816aff] dark:from-[#1b0973] dark:via-[#170960] dark:to-[#0e0938] text-[--primary-color-light] dark:text-[--primary-color]"
 			}
 		>
 			<div

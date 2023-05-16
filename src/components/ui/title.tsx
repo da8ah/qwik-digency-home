@@ -21,8 +21,8 @@ const SectionTitle = component$<SectionTitleProps>((props) => {
 			<span class={"text-[--primary-color-light] dark:text-[--primary-color]"}>
 				<br class={wrap ? "block" : "hidden"} />
 				{bold}
-			</span>
-			{" " + opt}
+			</span>{" "}
+			{opt || ""}
 		</h2>
 	);
 });
