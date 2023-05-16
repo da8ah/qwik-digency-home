@@ -1,28 +1,8 @@
 import { component$ } from "@builder.io/qwik";
-import { BlogCard } from "~/components/ui/cards";
 import SectionTitle from "~/components/ui/title";
+import { Slider } from "~/integrations/react/slider";
 
 export default component$(() => {
-	const liArr = [
-		{
-			img: <br />,
-			title: "Video",
-			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
-		},
-		{
-			img: <br />,
-			title: "Articles",
-			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
-		},
-		{
-			img: <br />,
-			title: "Case Study",
-			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
-		},
-	];
 	return (
 		<section
 			id="testimonials"
@@ -38,15 +18,9 @@ export default component$(() => {
 					bold={"5,000 customers"}
 				/>
 			</div>
-			<ul class={"flex flex-row justify-center items-center"}>
-				{liArr.map((li, index) => {
-					return (
-						<BlogCard key={index} {...li}>
-							{li.img}
-						</BlogCard>
-					);
-				})}
-			</ul>
+			<div class={"flex flex-col justify-center items-center"}>
+				<Slider />
+			</div>
 		</section>
 	);
 });
