@@ -5,19 +5,29 @@ import SectionTitle from "~/components/ui/title";
 export default component$(() => {
 	const liArr = [
 		{
-			img: <img src="img/video.png" alt="team member 1" />,
+			img: (
+				<img class={"object-cover"} src="img/video.png" alt="team member 1" />
+			),
 			title: "Video",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
 		},
 		{
-			img: <img src="img/article.png" alt="team member 2" />,
+			img: (
+				<img class={"object-cover"} src="img/article.png" alt="team member 2" />
+			),
 			title: "Articles",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
 		},
 		{
-			img: <img src="img/case-study.png" alt="team member 3" />,
+			img: (
+				<img
+					class={"object-cover"}
+					src="img/case-study.png"
+					alt="team member 3"
+				/>
+			),
 			title: "Case Study",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mauris eget auctor posuere, enim arcu dictum dolor, quis porta nibh dolor ullamcorper diam.",
@@ -38,10 +48,10 @@ export default component$(() => {
 					bold={"recent blog"}
 				/>
 			</div>
-			<ul class={"flex flex-row justify-center items-center"}>
+			<ul class={"flex flex-row justify-center items-end"}>
 				{liArr.map((li, index) => {
 					return (
-						<BlogCard key={index} {...li}>
+						<BlogCard id={`blog-li-${index}`} key={index} {...li}>
 							{li.img}
 						</BlogCard>
 					);

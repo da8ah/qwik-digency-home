@@ -46,16 +46,18 @@ export default component$(() => {
 						pulvinar nunc nibh in leo.
 					</p>
 				</div>
-				<div class={"w-[50%] flex"}>
-					<ul class={"w-full flex flex-row flex-grow justify-around"}>
+				<div class={"w-[50%] flex text-center"}>
+					<ul class={"w-full h-full flex flex-row flex-grow justify-around"}>
 						{ulArr.map((element, index) => {
 							return (
-								<ul key={index} class={"flex flex-col justify-between text-md"}>
-									<li>{element.title}</li>
-									{element.pages.map((li, index) => {
-										return <li key={index}>{li}</li>;
-									})}
-								</ul>
+								<li key={index} class={"flex flex-col flex-grow"}>
+									<ul class={"flex flex-col flex-grow justify-between text-md"}>
+										<li>{element.title}</li>
+										{element.pages.map((li, index) => {
+											return <li key={index}>{li}</li>;
+										})}
+									</ul>
+								</li>
 							);
 						})}
 					</ul>

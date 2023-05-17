@@ -9,15 +9,15 @@ export const Slider = qwikify$(() => {
 		superLargeDesktop: {
 			// the naming can be any, depends on you.
 			breakpoint: { max: 4000, min: 3000 },
-			items: 5,
+			items: 1,
 		},
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
-			items: 3,
+			items: 1,
 		},
 		tablet: {
 			breakpoint: { max: 1024, min: 464 },
-			items: 3,
+			items: 1,
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
@@ -46,32 +46,40 @@ export const Slider = qwikify$(() => {
 	];
 	return (
 		<Carousel
-			className="z-10 w-full mt-16 owl-carousel owl-theme text-center"
+			className="rounded-lg z-0 w-full p-5 owl-carousel owl-theme bg-[--primary-color-light] dark:bg-transparent text-center text-[--small-text-color-light] dark:text-[--small-text-color]"
 			responsive={responsive}
 			infinite
 			autoPlay
+			showDots
+			arrows={false}
 			autoPlaySpeed={3000}
 			transitionDuration={500}
 		>
 			{data.map((element, index) => {
 				return (
-					<li key={index} className="leading-loose">
-						<p>
+					<li
+						key={index}
+						className="px-40 py-10 flex flex-col justify-center items-center leading-normal"
+					>
+						<p className="text-justify px-20">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
 							eget nisi non tortor porttitor interdum. Donec iaculis sem quis
 							ipsum lacinia, eu eleifend dui pulvinar. Donec commodo ante leo,
 							quis sollicitudin tellus porttitor non. Pellentesque facilisis
-							purus vehicula magna pellentesque dignissim. Aliquam ornare
-							ultricies augue in faucibus. Duis sit amet elementum orci. Aliquam
-							volutpat leo et elit imperdiet, vitae iaculis orci ultricies. Ut
-							id molestie diam.
+							purus vehicula magna pellentesque dignissim.
 						</p>
-						<div className="flex flex-row justify-center">
-							<div className="w-[20%]">
-								<img src={element.imgURL} alt={element.imgAlt} />
+						<div className="w-[40%] py-10 flex flex-row justify-center items-center">
+							<div className="w-[90px] h-[90px]">
+								<img
+									className="aspect-square rounded-full object-cover"
+									src={element.imgURL}
+									alt={element.imgAlt}
+								/>
 							</div>
-							<div className="w-[80%]">
-								<h2>{element.name}</h2>
+							<div className="w-[80%] flex flex-col justify-center items-center">
+								<h2 className="font-extrabold text-2xl text-[--primary-color-light] dark:text-[--primary-color]">
+									{element.name}
+								</h2>
 								<p>{element.rol}</p>
 							</div>
 						</div>

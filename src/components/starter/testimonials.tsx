@@ -7,7 +7,7 @@ export default component$(() => {
 		<section
 			id="testimonials"
 			class={
-				"py-10 px-1 lg:p-20 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
+				"w-full h-full py-10 px-1 lg:p-20 flex flex-col justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--primary-color-light] dark:text-[--primary-color]"
 			}
 		>
 			<div class={"w-full text-center"}>
@@ -18,9 +18,7 @@ export default component$(() => {
 					bold={"5,000 customers"}
 				/>
 			</div>
-			<div class={"flex flex-col justify-center items-center"}>
-				<Slider />
-			</div>
+			<Slider />
 		</section>
 	);
 });

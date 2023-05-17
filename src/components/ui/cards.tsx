@@ -90,15 +90,17 @@ export const TeamCard = component$<TeamCardProps>((props) => {
 });
 
 type BlogCardProps = {
+	id: string;
 	title: string;
 	description: string;
 };
 export const BlogCard = component$<BlogCardProps>((props) => {
-	const { title, description } = props;
+	const { id, title, description } = props;
 	return (
 		<li
+			id={id}
 			class={
-				"w-full p-4 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
+				"w-full p-4 pt-8 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
 			}
 		>
 			<div
@@ -113,7 +115,7 @@ export const BlogCard = component$<BlogCardProps>((props) => {
 				>
 					{title}
 				</h3>
-				<div class={"flex justify-cente"}>
+				<div class={"h-[170px] flex justify-center"}>
 					<Slot />
 				</div>
 				<div class={"px-4 py-7"}>
