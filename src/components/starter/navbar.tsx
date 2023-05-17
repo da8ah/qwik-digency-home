@@ -1,5 +1,4 @@
 import { $, component$, useContext, useSignal } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import {
 	HeroiconsSquares2x220Solid as HiSquare,
 	HeroiconsSquaresPlus20Solid as HiSquarePlus,
@@ -72,54 +71,54 @@ export default component$<ChildProps>(
 						}
 					>
 						<li>
-							<Link
+							<a
 								class={
 									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
 								}
 								href="#hero"
 							>
 								Home
-							</Link>
+							</a>
 						</li>
 						<li>
-							<Link
+							<a
 								class={
 									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
 								}
-								href="#about"
-							>
-								About
-							</Link>
-						</li>
-						<li>
-							<Link
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#service"
+								href="#business"
 							>
 								Service
-							</Link>
+							</a>
 						</li>
 						<li>
-							<Link
+							<a
 								class={
 									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
 								}
-								href="#projects"
+								href="#whyus"
 							>
 								Projects
-							</Link>
+							</a>
 						</li>
 						<li>
-							<Link
+							<a
 								class={
 									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
 								}
 								href="#blog"
 							>
 								Blog
-							</Link>
+							</a>
+						</li>
+						<li>
+							<a
+								class={
+									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
+								}
+								href="#testimonials"
+							>
+								About
+							</a>
 						</li>
 					</ul>
 					<div class={"w-full md:w-[20%] flex justify-center items-center"}>

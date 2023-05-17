@@ -109,7 +109,7 @@ export const BlogCard = component$<BlogCardProps>((props) => {
 		>
 			<div
 				class={
-					"rounded-md flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
+					"rounded-md px-1 flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
 				}
 			>
 				<h3
