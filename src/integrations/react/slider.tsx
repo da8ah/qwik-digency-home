@@ -46,22 +46,21 @@ export const Slider = qwikify$(() => {
 	];
 	return (
 		<Carousel
-			className="rounded-lg z-0 w-full p-5 owl-carousel owl-theme bg-[--primary-color-light] dark:bg-transparent text-center text-[--small-text-color-light] dark:text-[--small-text-color]"
+			className="rounded-lg z-0 w-full owl-carousel owl-theme bg-transparent text-center text-[--small-text-color-light] dark:text-[--small-text-color]"
 			responsive={responsive}
 			infinite
 			autoPlay
-			showDots
 			arrows={false}
 			autoPlaySpeed={3000}
 			transitionDuration={500}
 		>
 			{data.map((element, index) => {
 				return (
-					<li
+					<div
 						key={index}
-						className="px-40 py-10 flex flex-col justify-center items-center leading-normal"
+						className="px-10 md:px-20 lg:px-40 py-10 flex flex-col justify-center items-center leading-normal"
 					>
-						<p className="text-justify px-20">
+						<p className="text-center px-20">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
 							eget nisi non tortor porttitor interdum. Donec iaculis sem quis
 							ipsum lacinia, eu eleifend dui pulvinar. Donec commodo ante leo,
@@ -69,7 +68,7 @@ export const Slider = qwikify$(() => {
 							purus vehicula magna pellentesque dignissim.
 						</p>
 						<div className="w-[40%] py-10 flex flex-row justify-center items-center">
-							<div className="w-[90px] h-[90px]">
+							<div className="w-[100px] h-[100px]">
 								<img
 									className="aspect-square rounded-full object-cover"
 									src={element.imgURL}
@@ -83,7 +82,7 @@ export const Slider = qwikify$(() => {
 								<p>{element.rol}</p>
 							</div>
 						</div>
-					</li>
+					</div>
 				);
 			})}
 		</Carousel>

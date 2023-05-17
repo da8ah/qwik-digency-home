@@ -61,7 +61,11 @@ export const TeamCard = component$<TeamCardProps>((props) => {
 					"rounded-lg flex flex-col justify-center text-left font-bold bg-white shadow-2xl dark:bg-gradient-to-tr dark:from-[#0f123d] dark:via-[#0f123d] dark:to-[#0b2945]"
 				}
 			>
-				<div class={"rounded-t-lg h-40 flex justify-center bg-white"}>
+				<div
+					class={
+						"rounded-t-lg h-40 flex justify-center bg-gradient-to-tl from-white via-[#9a89f8] to-[#816aff] dark:bg-white dark:bg-none"
+					}
+				>
 					<Slot />
 				</div>
 				<div class={"px-4 py-7"}>

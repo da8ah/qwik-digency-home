@@ -26,7 +26,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-	title: "Digency",
+	title: "Digency | Tiber",
 	meta: [
 		{
 			name: "Digency",
