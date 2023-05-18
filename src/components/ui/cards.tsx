@@ -104,7 +104,7 @@ export const BlogCard = component$<BlogCardProps>((props) => {
 		<li
 			id={id}
 			class={
-				"w-full p-4 pt-8 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
+				"w-full p-4 md:pt-8 min-[450px]:px-20 min-[600px]:w-[40%] min-[600px]:p-4 lg:w-[24%]"
 			}
 		>
 			<div
@@ -125,7 +125,7 @@ export const BlogCard = component$<BlogCardProps>((props) => {
 				<div class={"px-4 py-7"}>
 					<p
 						class={
-							"line-clamp-3 py-2 text-xs text-[--small-text-color-light] dark:text-[--small-text-color] leading-loose"
+							"line-clamp-5 md:line-clamp-3 py-2 text-xs text-[--small-text-color-light] dark:text-[--small-text-color] leading-loose"
 						}
 					>
 						{description}

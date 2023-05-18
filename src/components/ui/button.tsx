@@ -40,9 +40,9 @@ const Button = component$<ButtonProps>((props) => {
 					href={props.href}
 					class={`${props.class || ""} ${r} ${
 						!props.secondary
-							? "uppercase md:capitalize font-bold text-white bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
-							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400"
-					} ${p} text-center active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
+							? "uppercase md:capitalize font-bold text-white bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] focus:dark:shadow-white"
+							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400 focus:dark:shadow-[--primary-color-light]"
+					} ${p} text-center active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:shadow-lg focus:shadow-black focus:dark:shadow-md disabled:opacity-50 disabled:pointer-events-none`}
 				>
 					<Slot />
 				</a>
@@ -51,9 +51,9 @@ const Button = component$<ButtonProps>((props) => {
 					{...props}
 					class={`${props.class || ""} ${r} ${
 						!props.secondary
-							? "uppercase md:capitalize font-bold text-white bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg]"
-							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400"
-					} ${p} text-center active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900`}
+							? "uppercase md:capitalize font-bold text-white bg-[--btn-primary-bg-light] dark:bg-[--btn-primary-bg] focus:dark:shadow-white"
+							: "bg-[--btn-secondary-bg-light] dark:bg-[--btn-secondary-bg] ring-1 ring-slate-400 dark:ring-slate-400 focus:dark:shadow-[--primary-color-light]"
+					} ${p} text-center active:scale-95 inline-flex items-center justify-center text-sm transition-color focus:outline-none focus:shadow-lg focus:shadow-black focus:dark:shadow-md disabled:opacity-50 disabled:pointer-events-none`}
 					onClick$={props.onClick$ && props.onClick$}
 				>
 					<Slot />

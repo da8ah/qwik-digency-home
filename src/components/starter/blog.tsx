@@ -48,7 +48,7 @@ export default component$(() => {
 					bold={"recent blog"}
 				/>
 			</div>
-			<ul class={"flex flex-row justify-center items-end"}>
+			<ul class={"flex flex-row flex-wrap justify-center items-end"}>
 				{liArr.map((li, index) => {
 					return (
 						<BlogCard id={`blog-li-${index}`} key={index} {...li}>

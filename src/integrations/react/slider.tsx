@@ -58,16 +58,16 @@ export const Slider = qwikify$(() => {
 				return (
 					<div
 						key={index}
-						className="px-10 md:px-20 lg:px-40 py-10 flex flex-col justify-center items-center leading-normal"
+						className="px-1 md:px-20 lg:px-40 py-10 flex flex-col justify-center items-center leading-normal"
 					>
-						<p className="text-center px-20">
+						<p className="text-center md:px-20 line-clamp-5 md:line-clamp-none">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
 							eget nisi non tortor porttitor interdum. Donec iaculis sem quis
 							ipsum lacinia, eu eleifend dui pulvinar. Donec commodo ante leo,
 							quis sollicitudin tellus porttitor non. Pellentesque facilisis
 							purus vehicula magna pellentesque dignissim.
 						</p>
-						<div className="w-[40%] py-10 flex flex-row justify-center items-center">
+						<div className="md:w-[40%] py-10 flex flex-col md:flex-row justify-center items-center">
 							<div className="w-[100px] h-[100px]">
 								<img
 									className="aspect-square rounded-full object-cover"
@@ -75,7 +75,7 @@ export const Slider = qwikify$(() => {
 									alt={element.imgAlt}
 								/>
 							</div>
-							<div className="w-[80%] flex flex-col justify-center items-center">
+							<div className="md:w-[80%] flex flex-col justify-center items-center">
 								<h2 className="font-extrabold text-2xl text-[--primary-color-light] dark:text-[--primary-color]">
 									{element.name}
 								</h2>

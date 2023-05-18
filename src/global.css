@@ -34,7 +34,7 @@
       #02bba6 30%,
       #1d81b0 55%,
       #235dad 75%);
-  --body-bg: rgba(6, 11, 26, 1);
+  --body-bg: #060b1a;
   --navbar-bg: #0f123d;
   --newsletter-bg: linear-gradient(90deg,
       #1b0973 20%,
@@ -65,8 +65,15 @@
   --team-card-bg-light: #fff;
 }
 
-#blog-li-1 {
-  padding-bottom: 3rem;
+@media screen and (min-width: 1024px) {
+  #blog-li-1 {
+    padding-bottom: 3rem;
+  }
+}
+
+section {
+  outline: #060b1a solid 1px;
+  outline-offset: 0;
 }
 
 html {

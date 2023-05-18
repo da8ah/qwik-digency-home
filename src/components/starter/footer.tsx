@@ -21,14 +21,10 @@ export default component$(() => {
 		<footer>
 			<div
 				class={
-					"py-10 px-1 lg:p-20 flex flex-row justify-center bg-[--body-bg-light] dark:bg-[--body-bg] text-[--small-text-color-light] dark:text-[--small-text-color]"
+					"py-10 px-1 lg:p-20 flex flex-col md:flex-row justify-center text-center md:text-left bg-[--body-bg-light] dark:bg-[--body-bg] text-[--small-text-color-light] dark:text-[--small-text-color]"
 				}
 			>
-				<div
-					class={
-						"w-[50%] text-left flex flex-col justify-center content-center"
-					}
-				>
+				<div class={"md:w-[50%] flex flex-col justify-center content-center"}>
 					<div class={"pb-5"}>
 						<h2
 							class={
@@ -46,8 +42,12 @@ export default component$(() => {
 						pulvinar nunc nibh in leo.
 					</p>
 				</div>
-				<div class={"w-[50%] flex text-center"}>
-					<ul class={"w-full h-full flex flex-row flex-grow justify-around"}>
+				<div class={"md:w-[50%] py-10 md:p-0 flex text-center"}>
+					<ul
+						class={
+							"w-full h-[20vh] md:h-full flex flex-row flex-grow justify-around"
+						}
+					>
 						{ulArr.map((element, index) => {
 							return (
 								<li key={index} class={"flex flex-col flex-grow"}>
