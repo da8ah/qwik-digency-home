@@ -71,9 +71,31 @@
   }
 }
 
-section {
-  outline: #060b1a solid 1px;
-  outline-offset: 0;
+@media screen and (max-width: 1024px) {
+  .dark section {
+    outline: #060b1a solid 1px;
+    outline-offset: 0;
+  }
+}
+
+/* SLIDER */
+#carousel {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+  display: none;
+}
+
+#slider-div-1 {
+  transform: translateX(100%);
+}
+
+#slider-div-2 {
+  transform: translateX(200%);
 }
 
 html {

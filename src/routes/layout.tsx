@@ -13,11 +13,11 @@ import Footer from "~/components/starter/footer";
 import Header from "~/components/starter/header";
 
 export const ThemeContext =
-	createContextId<Signal<"light" | "dark">>("digency.theme");
+	createContextId<Signal<"dark" | "light">>("digency.theme");
 
 export default component$(() => {
 	// ThemeContext
-	const theme = useSignal("dark");
+	const theme = useSignal<"dark" | "light">("dark");
 	useContextProvider(ThemeContext, theme);
 	useVisibleTask$(
 		({ track }) => {

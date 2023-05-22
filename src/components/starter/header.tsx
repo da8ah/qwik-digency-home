@@ -10,7 +10,7 @@ export default component$<NavbarProps>(
 		return (
 			<header
 				class={
-					"z-[100] bg-[--body-bg-light] dark:bg-[--body-bg] relative h-20 font-extrabold md:font-normal"
+					"z-10 bg-[--body-bg-light] dark:bg-[--body-bg] relative h-20 font-extrabold md:font-normal"
 				}
 			>
 				<Navbar mobileMenuState={mobileMenuState} />

@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import SectionTitle from "~/components/ui/title";
-import { Slider } from "~/integrations/react/slider";
+import { Slider } from "~/components/ui/slider";
 
 export default component$(() => {
 	return (

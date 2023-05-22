@@ -25,6 +25,16 @@ export default component$<ChildProps>(
 			}
 		});
 
+		const anchorClass =
+			"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg cursor-pointer";
+		const liArr = [
+			{ title: "Home", id: "hero" },
+			{ title: "Service", id: "business" },
+			{ title: "Projects", id: "whyus" },
+			{ title: "Blog", id: "blog" },
+			{ title: "About", id: "testimonials" },
+		];
+
 		return (
 			<nav
 				window:onScroll$={changeFixedPosition}
@@ -63,63 +73,29 @@ export default component$<ChildProps>(
 				<div
 					class={`${
 						mobileMenuState.isMenuOpen ? "flex" : "hidden"
-					} md:w-full h-full md:h-auto flex-col md:flex md:flex-row justify-around md:justify-between`}
+					} md:w-full h-full md:h-auto flex-col md:flex md:flex-row justify-evenly md:justify-between`}
 				>
 					<ul
 						class={
 							"p-5 w-full md:flex md:flex-row md:justify-center text-center text-[--link-color-light] dark:text-[--link-color]"
 						}
 					>
-						<li>
-							<a
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#hero"
-							>
-								Home
-							</a>
-						</li>
-						<li>
-							<a
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#business"
-							>
-								Service
-							</a>
-						</li>
-						<li>
-							<a
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#whyus"
-							>
-								Projects
-							</a>
-						</li>
-						<li>
-							<a
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#blog"
-							>
-								Blog
-							</a>
-						</li>
-						<li>
-							<a
-								class={
-									"block py-2 hover:text-[--primary-color-light] hover:dark:text-[--primary-color] md:mx-2 lg:mx-5 text-3xl md:text-lg"
-								}
-								href="#testimonials"
-							>
-								About
-							</a>
-						</li>
+						{liArr.map((li, index) => {
+							return (
+								<li key={index}>
+									<a
+										class={anchorClass}
+										onClick$={() => {
+											document.getElementById(li.id)?.scrollIntoView();
+											mobileMenuState.isMenuOpen = false;
+											document.body.classList.remove("overflow-hidden");
+										}}
+									>
+										{li.title}
+									</a>
+								</li>
+							);
+						})}
 					</ul>
 					<div class={"w-full md:w-[20%] flex justify-center items-center"}>
 						<button
@@ -128,19 +104,20 @@ export default component$<ChildProps>(
 							}
 							onClick$={() => {
 								theme.value = theme.value === "dark" ? "light" : "dark";
+								// Close mobile navbar
 								mobileMenuState.isMenuOpen = false;
 								document.body.classList.remove("overflow-hidden");
 							}}
 						>
 							<span class={"text-2xl"}>
-								{theme.value === "light" ? (
+								{theme.value !== "dark" ? (
 									<MdiDark class="cursor-pointer" />
 								) : (
 									<MdiLight class="cursor-pointer" />
 								)}
 							</span>
 							{"   "}
-							{theme.value === "dark" ? "light" : "dark"}
+							{theme.value !== "dark" ? "dark" : "light"}
 						</button>
 					</div>
 				</div>

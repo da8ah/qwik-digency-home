@@ -1,65 +1,137 @@
-# Qwik City App ⚡️
+# Digency
+Simple Home Page
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+## Features
+- [x] Dark/Light Theme
+- [x] Responsive Design
+- [x] Reusable Components
+- [x] Carousel
 
----
+## Dependencies
+- Vite
+- Qwik
+- TailWindCSS
 
-## Project Structure
+## About
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+<div align="center">
+<img style="width:70%" src="./doc/digency.png" >
 
-Inside your project, you'll see the following directory structure:
+<br/>
+<br/>
 
+🚀 Watch a demo [here!](https://da8ah.github.io/qwik-digency-home/)
+</div>
+<br/>
+
+The web application is a marketing agency called Digency, which offers web design, SEO, social media and online advertising services. It is responsive and adapts to different screen sizes and devices. You can also see different animations and effects.
+
+This project is a web application built with [Vite](https://qwik.builder.io/docs/advanced/vite/), a next generation frontend tooling that provides fast development and optimized production builds. [Qwik](https://qwik.builder.io/), a framework for building resumable applications that load instantly on the client. It uses [Tailwind](https://qwik.builder.io/docs/integrations/tailwind/) too, a design system that makes it easy to create custom user interfaces.
+
+## Local Setup
+
+- PNPM
+```bash
+$ npm i --location=global pnpm
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
-
-```shell
-pnpm qwik add # or `yarn qwik add`
-```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). During development, the `dev` command will server-side render (SSR) the output.
-
-```shell
-npm start # or `yarn start`
+- Install dependencies and Run
+```bash
+$ git clone https://github.com/da8ah/qwik-digency-home.git
+$ pnpm install
+$ pnpm run dev
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to locally preview a production build, and it should not be used as a production server.
-
-```shell
-pnpm preview # or `yarn preview`
+- Static Site Generator for GitHub Pages
+```bash
+$ npm run qwik add > Adapter: Static site (.html files)
 ```
 
-## Production
 
-The production build will generate client and server modules by running both client and server build commands. Additionally, the build command will use Typescript to run a type check on the source code.
+## Results
 
-```shell
-pnpm build # or `yarn build`
-```
+### Responsive Design
+
+You can find a full working version in the [Demo](https://da8ah.github.io/qwik-digency-home/).
+
+|Mobile|Tablet|Desktop|
+|:------------:|:------------:|:------------:|
+|<img style="width:30%" src="./doc/mobile.jpeg" >|<img style="width:30%" src="./doc/tablet.jpeg" >|<img style="width:30%" src="./doc/desktop.jpeg" >|
+<br/>
+
+### Animations
+
+Dark/Light Theme
+
+<div align="center" style="width:100%;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
+<img style="width:70%" src="./doc/digency.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/digency-light.png" >
+</div>
+<br/>
+
+Mobile Navbar
+
+<div align="center" style="width:100%;display:flex;flex-direction:row;justify-content:space-evenly;align-items:flex-start;">
+<img style="width:30%" src="./doc/mobile-navbar.png" > 
+<img style="width:30%" src="./doc/mobile-navbar-light.png" >
+</div>
+<br/>
+
+Navbar Hover
+
+<div align="center" style="width:100%;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
+<img style="width:70%" src="./doc/navbar.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/navbar-focus.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/navbar-light.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/navbar-light-focus.png" >
+</div>
+<br/>
+
+Cards
+
+<div align="center" style="width:100%;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
+<img style="width:70%" src="./doc/cards-1.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/cards-2.png" >
+</div>
+<br/>
+
+Carousel
+
+<div align="center" style="width:100%;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
+<img style="width:70%" src="./doc/testimonials-1.png" >
+<br/>
+<br/>
+<img style="width:70%" src="./doc/testimonials-2.png" >
+</div>
+<br/>
+
+Gradient & Button hover/focus Shadow
+
+<div align="center" style="width:100%;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
+<img style="width:70%" src="./doc/colors.png" >
+</div>
+<br/>
+<br/>
+
+## Changelog
+
+(Tiber) **Abril 2023 v1.0.0**
+* Navbar
+* Hero
+* Stats
+* Services
+* Features
+* Team
+* Blog
+* Testimonials
+* Newsletter
+* Footer

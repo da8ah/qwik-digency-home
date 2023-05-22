@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+export const subpath = "/qwik-digency-home";
 
 export default component$(() => {
 	/**
@@ -20,7 +21,7 @@ export default component$(() => {
 		<QwikCityProvider>
 			<head>
 				<meta charSet="utf-8" />
-				<link rel="manifest" href="/manifest.json" />
+				<link rel="manifest" href={`${subpath}/manifest.json`} />
 				<RouterHead />
 			</head>
 			<body lang="en">

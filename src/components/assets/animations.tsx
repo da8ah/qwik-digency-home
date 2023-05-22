@@ -49,3 +49,24 @@ export async function shootConfetti() {
 	setTimeout(shoot, 300);
 	setTimeout(shoot, 400);
 }
+
+export function slideUpdater() {
+	const container = document.getElementById("carousel");
+	const indexes = [0, 1, 2];
+	let counter = 0;
+	setInterval(async () => {
+		container!.scrollTo({ left: container!.offsetWidth, behavior: "smooth" });
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+		for (let i = 0; i < indexes.length; i++) {
+			const index = (counter + i) % indexes.length;
+			document!.getElementById(
+				`slider-div-${index}`,
+			)!.style.transform = `translateX(${100 * i}%)`;
+		}
+
+		if (counter > 2) {
+			counter = 0; // counter reset
+		}
+		counter++;
+	}, 3000);
+}

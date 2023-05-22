@@ -6,7 +6,11 @@ export default component$(() => {
 	const liArr = [
 		{
 			img: (
-				<img class={"object-cover"} src="img/video.png" alt="team member 1" />
+				<img
+					class={"object-cover"}
+					src="img/video.png"
+					alt="A graphic image of multimedia elements"
+				/>
 			),
 			title: "Video",
 			description:
@@ -14,7 +18,11 @@ export default component$(() => {
 		},
 		{
 			img: (
-				<img class={"object-cover"} src="img/article.png" alt="team member 2" />
+				<img
+					class={"object-cover"}
+					src="img/article.png"
+					alt="A graphic image of a professional writer"
+				/>
 			),
 			title: "Articles",
 			description:
@@ -25,7 +33,7 @@ export default component$(() => {
 				<img
 					class={"object-cover"}
 					src="img/case-study.png"
-					alt="team member 3"
+					alt="A graphic image depicting communication"
 				/>
 			),
 			title: "Case Study",
